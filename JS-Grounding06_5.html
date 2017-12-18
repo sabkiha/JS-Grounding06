@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>JS | Grounding 6_4</title>
+	<title>JS | Grounding 6_5</title>
 </head>
 <body>
 
@@ -10,14 +10,20 @@
 
 <p id="one"></p>
 
+<div id="mylion"></div>
+<div id="myparrot"></div>
+
+<div id="image"></div>
+
 <script>
 	class Animal {                  // notice the first capital letter, that’s standard way
  
-    constructor(name, sound, legs, hasWings) {  // Constructor has 2 parameters in this example.
+    constructor(name, sound, legs, hasWings, imageURL) {  // Constructor has 2 parameters in this example.
         this.name = name;       // However, you can omit them in the declaration  
         this.sound = sound;     // if you don’t need to pass parameters to constructor. 
         this.legs = legs;
         this.hasWings = hasWings;
+        this.imageURL = imageURL;
     }
     speak() {
         console.log(this.sound +"! I'm  " + this.name);
@@ -31,12 +37,12 @@
 		     };
 		 	}
 	}
-
-	var lion = new Animal("Simba", "Roar", 4, false);
+	
+		var lion = new Animal("Simba", "Roar", 4, false, "lion.png");
 	lion.speak();
 	lion.move();
 
-	var parrot = new Animal("Zazu", "Squawk", 2, true);
+	var parrot = new Animal("Zazu", "Squawk", 2, true, "parrot.png");
 	parrot.speak();
 	parrot.move();
 
@@ -53,6 +59,11 @@
     console.log(monkey);
     console.log(wildPig);
 
+	    document.getElementById('mylion').innerHTML += ("<br>" + "<h3> My name is " + lion.name + "</h3>" + "<br>");
+	    document.getElementById('mylion').innerHTML += '<img src="' + lion.imageURL + '">' ;
+
+    document.getElementById('myparrot').innerHTML += ("<br>" + "<h3> My name is " + parrot.name + "</h3>" + "<br>");
+    document.getElementById('myparrot').innerHTML += '<img src="' + parrot.imageURL + '">' ;
 
 </script>
 	
