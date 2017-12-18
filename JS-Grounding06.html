@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS | Grounding 6</title>
+</head>
+<body>
+
+<h3>1. Old Object syntax: add methods as properties</h3>
+
+<p id="one"></p>
+
+<p id="six"></p>
+
+<p id="two"></p>
+
+<p id="three"></p>
+
+<p id="four"></p>
+
+<p id="five"></p>
+
+
+
+<script>
+	var cat = {
+		"legs": 4,
+		"name": "Tom",
+		"color": "pale blue",
+		"isHappy": false
+	};
+	console.log("our cat has " + cat.legs + " legs.");
+
+	cat.legs = 2;		  // something bad happened to poor Tom
+	cat.color = "red";    // and his head is boiling 
+	console.log(cat);
+
+	var catHasGotJerry = true;
+	if (catHasGotJerry == true) {
+  		cat.isHappy = true;    // but he is somehow at least happy
+		}
+	console.log(cat);
+
+	cat.meow = function () {
+		document.getElementById('one').innerHTML = "Meow, my name is " + cat.name + "!";
+	};
+	cat.meow();
+
+	cat.run = function () {
+		document.getElementById('six').innerHTML = "I can run faster as Jerry on my  " + cat.legs + " legs!";
+	};
+	cat.run();
+
+
+	var monkey = {
+		"legs": 2,
+		"name": "Rose",
+		"color": "brown",
+		"isHappy": true
+	};
+	console.log(monkey);
+
+	document.getElementById('two').innerHTML = "The monkey is called " + monkey.name + ", has " + monkey.legs + " legs and the colour " + monkey.color + "." + "<br>";
+
+	var zebra = {
+		"legs": 4,
+		"name": "Rick",
+		"color": "stripy",
+		"isHappy": true
+	};
+	console.log(zebra);
+
+	document.getElementById('three').innerHTML = "The zebra is called " + zebra.name + ", has " + zebra.legs + " legs and the colour " + zebra.color + "." + "<br>";
+
+	var alligator = {
+		"legs": 4,
+		"name": "Milly",
+		"color": "green",
+		"isHappy": false
+	};
+	console.log(alligator);
+
+	document.getElementById('four').innerHTML = "The alligator is called " + alligator.name + ", has " + alligator.legs + " legs and the colour " + alligator.color + "." + "<br>";
+
+	var rat = {
+		"legs": 4,
+		"name": "Roger",
+		"color": "grey",
+		"isHappy": false
+	};
+	console.log(rat);
+
+	document.getElementById('five').innerHTML = "The rat is called " + rat.name + ", has " + rat.legs + " legs and the colour " + rat.color + "." + "<br>";
+
+
+</script>
+	
+</body>
+</html>

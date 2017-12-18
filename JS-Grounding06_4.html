@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS | Grounding 6_4</title>
+</head>
+<body>
+
+<h3>Classes: mass production of objects</h3>
+
+<p id="one"></p>
+
+<script>
+	class Animal {                  // notice the first capital letter, that’s standard way
+ 
+    constructor(name, sound) {  // Constructor has 2 parameters in this example.
+        this.name = name;       // However, you can omit them in the declaration  
+        this.sound = sound;     // if you don’t need to pass parameters to constructor. 
+    }
+    speak() {
+        console.log(this.sound +"! I'm  " + this.name);
+    }
+
+    move() {		
+		    if (this.hasWings == true) {
+		       document.getElementById('one').innerHTML += ("<br>" + "Hello," + this.name + " is flying." + "<br>");
+		    } else {
+		       document.getElementById('one').innerHTML += ("<br>" + "Hello," + this.name + " is running." + "<br>");
+		     };
+		 	}
+	}
+
+	var lion = new Animal("Simba", "Roar");
+	lion.speak();
+	lion.move();
+
+	var parrot = new Animal("Zazu", "Squawk");
+	parrot.speak();
+	parrot..move();
+
+	var monkey = new Animal("Rob", "Hihi");
+	monkey.speak();
+	monkey.move();
+
+	var wildPig = new Animal("Ruth", "Oink");
+	wildPig.speak();
+	wildPig.move();
+
+	lion.legs = 4;
+    lion.hasWings = false;
+
+    parrot.legs = 2;
+    parrot.hasWings = true;
+
+    monkey.legs = 2;
+    monkey.hasWings = false;
+
+    wildPig.legs = 4;
+    wildPig.hasWings = false;
+
+    console.log(lion);
+    console.log(parrot);
+    console.log(monkey);
+    console.log(wildPig);
+
+    //Add another function move() . The output of that function is created over console.log and depends on the this.hasWings: if an animal has wings, then it prints in console “Hello,  <name of the animal> is flying."; otherwise, the output is “Hello,  <name of the animal> is running."
+     
+ 
+
+
+</script>
+	
+</body>
+</html>

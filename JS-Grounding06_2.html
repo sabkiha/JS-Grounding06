@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS | Grounding 6_2</title>
+</head>
+<body>
+
+<h3>1. Old Object syntax: add methods as properties</h3>
+
+<p id="one"></p>
+
+<p id="six"></p>
+
+<p id="two"></p>
+
+<p id="three"></p>
+
+<p id="four"></p>
+
+<p id="five"></p>
+
+
+
+<script>
+	var cat = {
+		"legs": 4,
+		"name": "Tom",
+		"color": "pale blue",
+		"isHappy": false
+	};
+	console.log("our cat has " + cat.legs + " legs.");
+
+	cat.legs = 2;		  // something bad happened to poor Tom
+	cat.color = "red";    // and his head is boiling 
+	console.log(cat);
+
+	var catHasGotJerry = true;
+	if (catHasGotJerry == true) {
+  		cat.isHappy = true;    // but he is somehow at least happy
+		}
+	console.log(cat);
+
+	cat.run = function () {
+		document.getElementById('six').innerHTML = "I can run faster as Jerry on my  " + cat.legs + " legs!";
+	};
+	cat.run();
+
+
+	var monkey = {
+		"legs": 2,
+		"name": "Rose",
+		"color": "brown",
+		"isHappy": true
+	};
+	console.log(monkey);
+
+	document.getElementById('two').innerHTML = "The monkey is called " + monkey.name + ", has " + monkey.legs + " legs and the colour " + monkey.color + "." + "<br>";
+
+	var zebra = {
+		"legs": 4,
+		"name": "Rick",
+		"color": "stripy",
+		"isHappy": true
+	};
+	console.log(zebra);
+
+	document.getElementById('three').innerHTML = "The zebra is called " + zebra.name + ", has " + zebra.legs + " legs and the colour " + zebra.color + "." + "<br>";
+
+	var alligator = {
+		"legs": 4,
+		"name": "Milly",
+		"color": "green",
+		"isHappy": false
+	};
+	console.log(alligator);
+
+	document.getElementById('four').innerHTML = "The alligator is called " + alligator.name + ", has " + alligator.legs + " legs and the colour " + alligator.color + "." + "<br>";
+
+	var rat = {
+		"legs": 4,
+		"name": "Roger",
+		"color": "grey",
+		"isHappy": false
+	};
+	console.log(rat);
+
+	document.getElementById('five').innerHTML = "The rat is called " + rat.name + ", has " + rat.legs + " legs and the colour " + rat.color + "." + "<br>";
+</script>
+
+<h3>2. Add single function to several objects</h3>
+
+<p id="seven"></p>
+
+<script>
+	var cat = {
+	"legs": 4,
+	"name": "Tom",
+	"color": "pale blue",
+	"isHappy": false
+	};
+	console.log("our cat has " + cat.legs + " legs.");
+
+	cat.legs = 2;		  // something bad happened to poor Tom
+	cat.color = "red";    // and his head is boiling 
+	console.log(cat);
+
+	var catHasGotJerry = true;
+	if (catHasGotJerry == true) {
+  		cat.isHappy = true;    // but he is somehow at least happy
+		}
+	console.log(cat);
+
+	var speak = function () {
+  		return this.sound + "! My name is " + this.name + "!";
+  	};
+
+	var cat2 = {
+	 legs: 4,
+	 name: "Silvester",
+	 color: "black and white", 
+	 isHappy: false, 
+	 sound: "Meow", 
+	 speak: speak 		
+                // Usually, a property has the same name as the function so the code should look like: 
+				// speak: speak
+				// it is done differently here as a demonstration that speak() function 
+                // and “say” property are two different things. 
+
+	};
+
+	// Print properties
+	document.write("<h1>Silvester the cat as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + cat2.legs + "</h3>");
+	document.write("<h3>name = " + cat2.name + "</h3>");
+	document.write("<h3>color = " + cat2.color + "</h3>");
+	document.write("<h3>is Happy = " + cat2.isHappy + "</h3>");
+	document.write("<h3>" + cat2.speak() + "</h3>");    // call the object’s method here
+	
+	var mouse = {
+	 legs: 4,
+	 name: "Peter",
+	 color: "grey", 
+	 isHappy: false, 
+	 sound: "Squeak", 
+	 speak: speak 		
+	};
+
+	document.write("<h1>Peter the mouse as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + mouse.legs + "</h3>");
+	document.write("<h3>name = " + mouse.name + "</h3>");
+	document.write("<h3>color = " + mouse.color + "</h3>");
+	document.write("<h3>is Happy = " + mouse.isHappy + "</h3>");
+	document.write("<h3>" + mouse.speak() + "</h3>");    // call the object’s method here
+
+	var horse = {
+	 legs: 4,
+	 name: "Maud",
+	 color: "chestnut", 
+	 isHappy: true, 
+	 sound: "Whinny", 
+	 speak: speak 		
+	};
+
+	document.write("<h1>Maud the horse as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + horse.legs + "</h3>");
+	document.write("<h3>name = " + horse.name + "</h3>");
+	document.write("<h3>color = " + horse.color + "</h3>");
+	document.write("<h3>is Happy = " + horse.isHappy + "</h3>");
+	document.write("<h3>" + horse.speak() + "</h3>");    // call the object’s method here
+
+	var dog = {
+	 legs: 4,
+	 name: "Ruth",
+	 color: "purple", 
+	 isHappy: false, 
+	 sound: "Bark", 
+	 speak: speak 		
+	};
+
+	document.write("<h1>Ruth the dog as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + dog.legs + "</h3>");
+	document.write("<h3>name = " + dog.name + "</h3>");
+	document.write("<h3>color = " + dog.color + "</h3>");
+	document.write("<h3>is Happy = " + dog.isHappy + "</h3>");
+	document.write("<h3>" + dog.speak() + "</h3>");    // call the object’s method here
+
+
+</script>
+	
+</body>
+</html>

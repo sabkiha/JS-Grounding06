@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS | Grounding 6_3
+	</title>
+</head>
+<body>
+
+<h3>2. Add single function to several objects</h3>
+
+<img src="cat.png">
+<button onclick="document.getElementById('one').innerHTML = cat2.speak()">Who are You</button>
+<p id="one"></p>
+
+<img src="mouse.png" >
+<button onclick="document.getElementById('two').innerHTML = mouse.speak()">Who are You</button>
+<p id="two"></p>
+
+<img src="horse.png" alt="">
+<button onclick="document.getElementById('three').innerHTML = horse.speak()">Who are You</button>
+<p id="three"></p>
+
+<img src="dog.png" alt="">
+<button onclick="document.getElementById('four').innerHTML = dog.speak()">Who are You</button>
+<p id="four"></p>
+
+<img src="rooster.jpg" alt="">
+<button onclick="document.getElementById('five').innerHTML = rooster.speak()">Who are You</button>
+<p id="five"></p>
+
+
+
+<script>
+	var speak = function () {
+  		return this.sound + "! My name is " + this.name + "!";
+  	};
+
+	var cat2 = {
+	 legs: 4,
+	 name: "Silvester",
+	 color: "black and white", 
+	 isHappy: false, 
+	 sound: "Meow", 
+	 speak: speak 		
+   	};
+
+	document.write("<h1>Silvester the cat as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + cat2.legs + "</h3>");
+	document.write("<h3>name = " + cat2.name + "</h3>");
+	document.write("<h3>color = " + cat2.color + "</h3>");
+	document.write("<h3>is Happy = " + cat2.isHappy + "</h3>");
+	document.write("<h3>" + cat2.speak() + "</h3>"); 
+
+	var mouse = {
+	 legs: 4,
+	 name: "Peter",
+	 color: "grey", 
+	 isHappy: false, 
+	 sound: "Squeak", 
+	 speak: speak 		
+	};
+
+	document.write("<h1>Peter the mouse as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + mouse.legs + "</h3>");
+	document.write("<h3>name = " + mouse.name + "</h3>");
+	document.write("<h3>color = " + mouse.color + "</h3>");
+	document.write("<h3>is Happy = " + mouse.isHappy + "</h3>");
+	document.write("<h3>" + mouse.speak() + "</h3>");  
+
+	var horse = {
+	 legs: 4,
+	 name: "Maud",
+	 color: "chestnut", 
+	 isHappy: true, 
+	 sound: "Whinny", 
+	 speak: speak 		
+	};
+
+	document.write("<h1>Maud the horse as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + horse.legs + "</h3>");
+	document.write("<h3>name = " + horse.name + "</h3>");
+	document.write("<h3>color = " + horse.color + "</h3>");
+	document.write("<h3>is Happy = " + horse.isHappy + "</h3>");
+	document.write("<h3>" + horse.speak() + "</h3>");   
+
+	var dog = {
+	 legs: 4,
+	 name: "Ruth",
+	 color: "purple", 
+	 isHappy: false, 
+	 sound: "Bark", 
+	 speak: speak
+	};
+
+	document.write("<h1>Ruth the dog as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + dog.legs + "</h3>");
+	document.write("<h3>name = " + dog.name + "</h3>");
+	document.write("<h3>color = " + dog.color + "</h3>");
+	document.write("<h3>is Happy = " + dog.isHappy + "</h3>");
+	document.write("<h3>" + dog.speak() + "</h3>");
+
+	var rooster = {
+	 legs: 2,
+	 name: "Frank",
+	 color: "orange", 
+	 isHappy: false, 
+	 sound: "Cock-a-doodle", 
+	 speak: speak
+	};
+
+	document.write("<h1>Frank the rooster as object</h1>");
+	document.write("<br>");
+	document.write("<h3>legs = " + rooster.legs + "</h3>");
+	document.write("<h3>name = " + rooster.name + "</h3>");
+	document.write("<h3>color = " + rooster.color + "</h3>");
+	document.write("<h3>is Happy = " + rooster.isHappy + "</h3>");
+	document.write("<h3>" + rooster.speak() + "</h3>");
+
+
+
+
+</script>
+	
+</body>
+</html>
